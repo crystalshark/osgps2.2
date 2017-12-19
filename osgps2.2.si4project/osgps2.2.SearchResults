@@ -1,0 +1,17 @@
+---- m_time Matches (20 in 5 files) ----
+FwInter.c line 157 : extern double m_time[];
+globals.h line 49 : double m_time[3], delta_m_time, m_error, TIC_dt;
+globals.h line 161 : extern double m_time[3], delta_m_time, m_error, TIC_dt;
+main in gpsrcvr.c :   m_time[1] = clock_tow;
+display in gpsrcvr.c :   printf ("meas time %f  error %f  delta %f\n", m_time[1], m_error,
+nav_fix in nav_fix.c :     dt[i] = m_time[1] - (tr_time[i] - t_cor[i]);
+nav_fix in nav_fix.c :     m_time[1] = m_time[1] - cbias;
+nav_fix in nav_fix.c :           delta_m_time = modf (m_time[1], &ipart);
+nav_fix in nav_fix.c :                    m_time[1], rec_pos_llh.lat * r_to_d,
+nav_fix in nav_fix.c :         m_time[0] = m_time[1];
+nav_fix in nav_fix.c :     m_time[1] = m_time[1] + TIC_dt * (1.0 + clock_offset / 1.e6);
+nav_fix in nav_fix.c :              m_time[1], rp_ecef.x, rp_ecef.y, rp_ecef.z);
+nav_fix in nav_fix.c : 	gps2utc(m_time[1]+dtls, 1024+gps_eph[tr_prn[1]].week, &year, &month, &day, &hour, &minute, &second);
+nav_fix in nav_fix.c :     satellite[tr_prn[i]].Pr = (m_time[1] - tr_time[i]) * c; /*(m_time[1] - (tr_time[i] - t_cor[i])) * c;*/
+main in SoftOSGPS.c :     m_time[1] = clock_tow;
+display in SoftOSGPS.c :   printf ("meas time %f  error %f  delta %f\n", m_time[1], m_error,
